@@ -1,0 +1,627 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Our Research</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="6717d184-9f7c-4cb8-b652-67d9de279c28" class="page sans"><header><div class="page-header-icon undefined"><span class="icon">📜</span></div><h1 class="page-title">Our Research</h1></header><div class="page-body"><table class="collection-content"><thead><tr><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesTitle"><path d="M7.73943662,8.6971831 C7.77640845,8.7834507 7.81338028,8.8943662 7.81338028,9.00528169 C7.81338028,9.49823944 7.40669014,9.89260563 6.91373239,9.89260563 C6.53169014,9.89260563 6.19894366,9.64612676 6.08802817,9.30105634 L5.75528169,8.33978873 L2.05809859,8.33978873 L1.72535211,9.30105634 C1.61443662,9.64612676 1.2693662,9.89260563 0.887323944,9.89260563 C0.394366197,9.89260563 0,9.49823944 0,9.00528169 C0,8.8943662 0.0246478873,8.7834507 0.0616197183,8.6971831 L2.46478873,2.48591549 C2.68661972,1.90669014 3.24119718,1.5 3.90669014,1.5 C4.55985915,1.5 5.12676056,1.90669014 5.34859155,2.48591549 L7.73943662,8.6971831 Z M2.60035211,6.82394366 L5.21302817,6.82394366 L3.90669014,3.10211268 L2.60035211,6.82394366 Z M11.3996479,3.70598592 C12.7552817,3.70598592 14,4.24823944 14,5.96126761 L14,9.07922535 C14,9.52288732 13.6549296,9.89260563 13.2112676,9.89260563 C12.8169014,9.89260563 12.471831,9.59683099 12.4225352,9.19014085 C12.028169,9.6584507 11.3257042,9.95422535 10.5492958,9.95422535 C9.60035211,9.95422535 8.47887324,9.31338028 8.47887324,7.98239437 C8.47887324,6.58978873 9.60035211,6.08450704 10.5492958,6.08450704 C11.3380282,6.08450704 12.040493,6.33098592 12.4348592,6.81161972 L12.4348592,5.98591549 C12.4348592,5.38204225 11.9172535,4.98767606 11.1285211,4.98767606 C10.6602113,4.98767606 10.2411972,5.11091549 9.80985915,5.38204225 C9.72359155,5.43133803 9.61267606,5.46830986 9.50176056,5.46830986 C9.18133803,5.46830986 8.91021127,5.1971831 8.91021127,4.86443662 C8.91021127,4.64260563 9.0334507,4.44542254 9.19366197,4.34683099 C9.87147887,3.90316901 10.6232394,3.70598592 11.3996479,3.70598592 Z M11.1778169,8.8943662 C11.6830986,8.8943662 12.1760563,8.72183099 12.4348592,8.37676056 L12.4348592,7.63732394 C12.1760563,7.29225352 11.6830986,7.11971831 11.1778169,7.11971831 C10.5616197,7.11971831 10.056338,7.45246479 10.056338,8.0193662 C10.056338,8.57394366 10.5616197,8.8943662 11.1778169,8.8943662 Z M0.65625,11.125 L13.34375,11.125 C13.7061869,11.125 14,11.4188131 14,11.78125 C14,12.1436869 13.7061869,12.4375 13.34375,12.4375 L0.65625,12.4375 C0.293813133,12.4375 4.43857149e-17,12.1436869 0,11.78125 C-4.43857149e-17,11.4188131 0.293813133,11.125 0.65625,11.125 Z"></path></svg></span>Paper</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>🎁 Package</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>🎓 Authours</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>🏫 Academy</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>💿 Dataset (JIT)</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesText"><path d="M7,4.56818 C7,4.29204 6.77614,4.06818 6.5,4.06818 L0.5,4.06818 C0.223858,4.06818 0,4.29204 0,4.56818 L0,5.61364 C0,5.88978 0.223858,6.11364 0.5,6.11364 L6.5,6.11364 C6.77614,6.11364 7,5.88978 7,5.61364 L7,4.56818 Z M0.5,1 C0.223858,1 0,1.223858 0,1.5 L0,2.54545 C0,2.8216 0.223858,3.04545 0.5,3.04545 L12.5,3.04545 C12.7761,3.04545 13,2.8216 13,2.54545 L13,1.5 C13,1.223858 12.7761,1 12.5,1 L0.5,1 Z M0,8.68182 C0,8.95796 0.223858,9.18182 0.5,9.18182 L11.5,9.18182 C11.7761,9.18182 12,8.95796 12,8.68182 L12,7.63636 C12,7.36022 11.7761,7.13636 11.5,7.13636 L0.5,7.13636 C0.223858,7.13636 0,7.36022 0,7.63636 L0,8.68182 Z M0,11.75 C0,12.0261 0.223858,12.25 0.5,12.25 L9.5,12.25 C9.77614,12.25 10,12.0261 10,11.75 L10,10.70455 C10,10.4284 9.77614,10.20455 9.5,10.20455 L0.5,10.20455 C0.223858,10.20455 0,10.4284 0,10.70455 L0,11.75 Z"></path></svg></span>📀 Dataset (JSS)</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M3.73333,3.86667 L7.46667,3.86667 C8.49613,3.86667 9.33333,4.70387 9.33333,5.73333 C9.33333,6.7628 8.49613,7.6 7.46667,7.6 L6.53333,7.6 C6.01813,7.6 5.6,8.0186 5.6,8.53333 C5.6,9.04807 6.01813,9.46667 6.53333,9.46667 L7.46667,9.46667 C9.5284,9.46667 11.2,7.79507 11.2,5.73333 C11.2,3.6716 9.5284,2 7.46667,2 L3.73333,2 C1.6716,2 0,3.6716 0,5.73333 C0,7.124 0.762067,8.33453 1.88953,8.97713 C1.87553,8.83107 1.86667,8.6836 1.86667,8.53333 C1.86667,7.92013 1.98753,7.33447 2.2036,6.7978 C1.99267,6.4954 1.86667,6.12953 1.86667,5.73333 C1.86667,4.70387 2.70387,3.86667 3.73333,3.86667 Z M12.1095,5.28907 C12.1231,5.4356 12.1333,5.58307 12.1333,5.73333 C12.1333,6.34607 12.0101,6.9294 11.7931,7.46513 C12.0059,7.768 12.1333,8.13573 12.1333,8.53333 C12.1333,9.5628 11.2961,10.4 10.2667,10.4 L6.53333,10.4 C5.50387,10.4 4.66667,9.5628 4.66667,8.53333 C4.66667,7.50387 5.50387,6.66667 6.53333,6.66667 L7.46667,6.66667 C7.98187,6.66667 8.4,6.24807 8.4,5.73333 C8.4,5.2186 7.98187,4.8 7.46667,4.8 L6.53333,4.8 C4.4716,4.8 2.8,6.4716 2.8,8.53333 C2.8,10.59507 4.4716,12.2667 6.53333,12.2667 L10.2667,12.2667 C12.3284,12.2667 14,10.59507 14,8.53333 C14,7.14267 13.2375,5.93167 12.1095,5.28907 Z"></path></svg></span>📜 Paper</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesMultipleSelect"><path d="M4,3 C4,2.447715 4.447715,2 5,2 L12,2 C12.5523,2 13,2.447716 13,3 C13,3.55228 12.5523,4 12,4 L5,4 C4.447715,4 4,3.55228 4,3 Z M4,7 C4,6.447715 4.447715,6 5,6 L12,6 C12.5523,6 13,6.447716 13,7 C13,7.55228 12.5523,8 12,8 L5,8 C4.447715,8 4,7.55228 4,7 Z M4,11 C4,10.447715 4.447715,10 5,10 L12,10 C12.5523,10 13,10.447716 13,11 C13,11.55228 12.5523,12 12,12 L5,12 C4.447715,12 4,11.55228 4,11 Z M2,4 C1.44771525,4 1,3.55228475 1,3 C1,2.44771525 1.44771525,2 2,2 C2.55228475,2 3,2.44771525 3,3 C3,3.55228475 2.55228475,4 2,4 Z M2,8 C1.44771525,8 1,7.55228475 1,7 C1,6.44771525 1.44771525,6 2,6 C2.55228475,6 3,6.44771525 3,7 C3,7.55228475 2.55228475,8 2,8 Z M2,12 C1.44771525,12 1,11.5522847 1,11 C1,10.4477153 1.44771525,10 2,10 C2.55228475,10 3,10.4477153 3,11 C3,11.5522847 2.55228475,12 2,12 Z"></path></svg></span>🔎 Keyword</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M10.8889,5.5 L3.11111,5.5 L3.11111,7.05556 L10.8889,7.05556 L10.8889,5.5 Z M12.4444,1.05556 L11.6667,1.05556 L11.6667,0 L10.1111,0 L10.1111,1.05556 L3.88889,1.05556 L3.88889,0 L2.33333,0 L2.33333,1.05556 L1.55556,1.05556 C0.692222,1.05556 0.00777777,1.75556 0.00777777,2.61111 L0,12.5 C0,13.3556 0.692222,14 1.55556,14 L12.4444,14 C13.3,14 14,13.3556 14,12.5 L14,2.61111 C14,1.75556 13.3,1.05556 12.4444,1.05556 Z M12.4444,12.5 L1.55556,12.5 L1.55556,3.94444 L12.4444,3.94444 L12.4444,12.5 Z M8.55556,8.61111 L3.11111,8.61111 L3.11111,10.1667 L8.55556,10.1667 L8.55556,8.61111 Z"></path></svg></span>🗓 Date</th><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesUrl"><path d="M3.73333,3.86667 L7.46667,3.86667 C8.49613,3.86667 9.33333,4.70387 9.33333,5.73333 C9.33333,6.7628 8.49613,7.6 7.46667,7.6 L6.53333,7.6 C6.01813,7.6 5.6,8.0186 5.6,8.53333 C5.6,9.04807 6.01813,9.46667 6.53333,9.46667 L7.46667,9.46667 C9.5284,9.46667 11.2,7.79507 11.2,5.73333 C11.2,3.6716 9.5284,2 7.46667,2 L3.73333,2 C1.6716,2 0,3.6716 0,5.73333 C0,7.124 0.762067,8.33453 1.88953,8.97713 C1.87553,8.83107 1.86667,8.6836 1.86667,8.53333 C1.86667,7.92013 1.98753,7.33447 2.2036,6.7978 C1.99267,6.4954 1.86667,6.12953 1.86667,5.73333 C1.86667,4.70387 2.70387,3.86667 3.73333,3.86667 Z M12.1095,5.28907 C12.1231,5.4356 12.1333,5.58307 12.1333,5.73333 C12.1333,6.34607 12.0101,6.9294 11.7931,7.46513 C12.0059,7.768 12.1333,8.13573 12.1333,8.53333 C12.1333,9.5628 11.2961,10.4 10.2667,10.4 L6.53333,10.4 C5.50387,10.4 4.66667,9.5628 4.66667,8.53333 C4.66667,7.50387 5.50387,6.66667 6.53333,6.66667 L7.46667,6.66667 C7.98187,6.66667 8.4,6.24807 8.4,5.73333 C8.4,5.2186 7.98187,4.8 7.46667,4.8 L6.53333,4.8 C4.4716,4.8 2.8,6.4716 2.8,8.53333 C2.8,10.59507 4.4716,12.2667 6.53333,12.2667 L10.2667,12.2667 C12.3284,12.2667 14,10.59507 14,8.53333 C14,7.14267 13.2375,5.93167 12.1095,5.28907 Z"></path></svg></span>🧑‍💻 Code</th></tr></thead><tbody><tr id="dec58298-42c4-448e-8b3b-0a5bee3e0914"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Hypergraph%20Attention%20Networks%20for%20Multimodal%20Learn%20dec5829842c4448e8b3b0a5bee3e0914.html">Hypergraph Attention Networks for Multimodal Learning</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Eun-Sol Kim, Woo Young Kang, Kyoung-Woon On, Yu-Jung Heo, Byoung-Tak Zhang</td><td class="cell-eW}0">CVPR (2020)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Kim_Hypergraph_Attention_Networks_for_Multimodal_Learning_CVPR_2020_paper.pdf" class="url-value">https://openaccess.thecvf.com/content_CVPR_2020/papers/Kim_Hypergraph_Attention_Networks_for_Multimodal_Learning_CVPR_2020_paper.pdf</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-gray">Core ML/DL</span><span class="selected-value select-value-color-pink">Vision</span></td><td class="cell-:soD"><time>@Feb 27, 2020</time></td><td class="cell-hnn!"></td></tr><tr id="f7dea33e-a545-413f-99d4-2ddf82c2a3e9"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Uncertainty-Aware%20Learning%20from%20Demonstration%20Usin%20f7dea33ea545413f99d42ddf82c2a3e9.html">Uncertainty-Aware Learning from Demonstration Using Mixture Density Networks with Sampling-Free Variance Modeling</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Sungjoon Choi, Kyungjae Lee, Sungbin Lim, Songhwai Oh</td><td class="cell-eW}0">ICRA (2018)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://ieeexplore.ieee.org/document/8462978" class="url-value">https://ieeexplore.ieee.org/document/8462978</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-gray">Core ML/DL</span><span class="selected-value select-value-color-yellow">RL</span><span class="selected-value select-value-color-gray">Robotics</span></td><td class="cell-:soD"><time>@May 21, 2018</time></td><td class="cell-hnn!"></td></tr><tr id="e7b049c8-17b8-4363-b365-9c699afc0712"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Predicting%20drug-target%20interaction%20using%203D%20struct%20e7b049c817b84363b3659c699afc0712.html">Predicting drug-target interaction using 3D structure-embedded graph representations from graph neural networks</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Jaechang Lim, Seongok Ryu, Kyubyong Park, Yo Joong Choe, Jiyeon Ham, Woo Youn Kim</td><td class="cell-eW}0">Journal Of Chemical Information and Modeling (2019)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/1904.08144" class="url-value">https://arxiv.org/abs/1904.08144</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-yellow">Chemistry</span><span class="selected-value select-value-color-blue">Drug discovery</span></td><td class="cell-:soD"><time>@Aug 23, 2019</time></td><td class="cell-hnn!"></td></tr><tr id="d31790ed-b858-41c8-8051-66c8b9be1a2e"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/A%20Perlin%20Noise-Based%20Augmentation%20Strategy%20for%20Dee%20d31790edb85841c8805166c8b9be1a2e.html">A Perlin Noise-Based Augmentation Strategy for Deep Learning with Small Data Samples of HRCT images</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Hyun-Jin Bae, Chang-Wook Kim, Namju Kim, BeomHee Park, Namkug Kim, Joon Beom Seo &amp; Sang Min Lee</td><td class="cell-eW}0">Scientific Reports (2018)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://www.nature.com/articles/s41598-018-36047-2.epdf" class="url-value">https://www.nature.com/articles/s41598-018-36047-2.epdf</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-pink">Medical</span><span class="selected-value select-value-color-orange">Sematic segmentation</span></td><td class="cell-:soD"><time>@Dec 6, 2018</time></td><td class="cell-hnn!"></td></tr><tr id="c29a70a9-d88e-4fc7-be30-0f6254a2ba72"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Monte%20Carlo%20Tree%20Search%20in%20continuous%20spaces%20using%20c29a70a9d88e4fc7be300f6254a2ba72.html">Monte Carlo Tree Search in continuous spaces using Voronoi optimistic optimization with regret bounds</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Beomjoon Kim, Kyungjae Lee, Sungbin Lim, Leslie Pack Kaelbling, and Tomas Lozano-Perez</td><td class="cell-eW}0">AAAI Oral (2020)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="http://people.csail.mit.edu/beomjoon/publications/kim-aaai20.pdf" class="url-value">http://people.csail.mit.edu/beomjoon/publications/kim-aaai20.pdf</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-default">Optimization</span><span class="selected-value select-value-color-gray">Robotics</span></td><td class="cell-:soD"><time>@Feb 7, 2020</time></td><td class="cell-hnn!"></td></tr><tr id="5cdded7b-1a5b-42c1-8c48-9324f3705fb2"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/A%20Neural%20Grammatical%20Error%20Correction%20System%20Built%205cdded7b1a5b42c18c489324f3705fb2.html">A Neural Grammatical Error Correction System Built On Better Pre-training and Sequential Transfer Learning</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Yo Joong Choe, Jiyeon Ham, Kyubyong Park, Yeoil Yoon</td><td class="cell-eW}0">ACL Workshop on Innovative Use of NLP for Building Educational Applications (BEA) (2019)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/1907.01256" class="url-value">https://arxiv.org/abs/1907.01256</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-gray">GEC (Grammatical Error Correction)</span><span class="selected-value select-value-color-red">NLP</span><span class="selected-value select-value-color-purple">Pre-training</span></td><td class="cell-:soD"><time>@Jul 2, 2019</time></td><td class="cell-hnn!"></td></tr><tr id="4f58b72e-617b-4ccb-93c3-a9efe507e66b"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Interactive%20Text2Pickup%20Network%20for%20Natural%20Langua%204f58b72e617b4ccb93c3a9efe507e66b.html">Interactive Text2Pickup Network for Natural Language based Human-Robot Collaboration</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Hyemin Ahn, Sungjoon Choi, Nuri Kim, Geonho Cha, Songhwai Oh</td><td class="cell-eW}0">IEEE Robotics and Automation Letters (2018)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/1805.10799" class="url-value">https://arxiv.org/abs/1805.10799</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-red">NLP</span><span class="selected-value select-value-color-gray">Robotics</span></td><td class="cell-:soD"><time>@May 28, 2018</time></td><td class="cell-hnn!"></td></tr><tr id="18322989-ee3a-4315-a2f6-9b2f6dc07f96"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Discovery%20of%20Natural%20Language%20Concepts%20in%20Individu%2018322989ee3a4315a2f69b2f6dc07f96.html">Discovery of Natural Language Concepts in Individual Units of CNNs</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Seil Na, Yo Joong Choe, Dong-Hyun Lee, Gunhee Kim</td><td class="cell-eW}0">ICLR (2019)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/1902.07249" class="url-value">https://arxiv.org/abs/1902.07249</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-pink">Interpretability</span><span class="selected-value select-value-color-red">NLP</span></td><td class="cell-:soD"><time>@Feb 18, 2019</time></td><td class="cell-hnn!"></td></tr><tr id="16b6798a-8b8d-4d73-840b-88ada3eaa7fc"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Visualizing%20Semantic%20Structures%20of%20Sequential%20Data%2016b6798a8b8d4d73840b88ada3eaa7fc.html">Visualizing Semantic Structures of Sequential Data by Learning Temporal Dependencies</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Kyoung-Woon On, Eun-Sol Kim, Yu-Jung Heo, Byoung-Tak Zhang</td><td class="cell-eW}0">AAAI Workshop on Network Interpretability for Deep Learning (2019)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/1901.09066" class="url-value">https://arxiv.org/abs/1901.09066</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-purple">Structural Learning</span><span class="selected-value select-value-color-brown">Video</span><span class="selected-value select-value-color-pink">Vision</span></td><td class="cell-:soD"><time>@Jan 20, 2019</time></td><td class="cell-hnn!"></td></tr><tr id="12f3d621-1745-4b8c-b6ec-fe92c426d880"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Cut-Based%20Graph%20Learning%20Networks%20to%20Discover%20Comp%2012f3d62117454b8cb6ecfe92c426d880.html">Cut-Based Graph Learning Networks to Discover Compositional Structure of Sequential Video Data</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Kyoung-Woon On, Eun-Sol Kim, Yu-Jung Heo, Byoung-Tak Zhang</td><td class="cell-eW}0">AAAI Oral (2020)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/pdf/2001.07613.pdf" class="url-value">https://arxiv.org/pdf/2001.07613.pdf</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-orange">Graph Neural Networks</span><span class="selected-value select-value-color-purple">Sound/Voice</span><span class="selected-value select-value-color-brown">Video</span><span class="selected-value select-value-color-pink">Vision</span></td><td class="cell-:soD"><time>@Feb 7, 2020</time></td><td class="cell-hnn!"></td></tr><tr id="120c499f-17cc-4ed0-98cd-3e8db9d8646d"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/word2word%20A%20Collection%20of%20Bilingual%20Lexicons%20for%203%20120c499f17cc4ed098cd3e8db9d8646d.html">word2word: A Collection of Bilingual Lexicons for 3,564 Language Pairs</a></td><td class="cell-Fbmw"><a href="https://pypi.org/project/word2word/">https://pypi.org/project/word2word/</a></td><td class="cell-Oc~K">Yo Joong Choe, Kyubyong Park, Dongwoo Kim</td><td class="cell-eW}0">LREC (2020)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/1911.12019" class="url-value">https://arxiv.org/abs/1911.12019</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-brown">Multilinguality</span><span class="selected-value select-value-color-red">NLP</span><span class="selected-value select-value-color-blue">Translation</span></td><td class="cell-:soD"><time>@Feb 12, 2020</time></td><td class="cell-hnn!"></td></tr><tr id="01eb7fb8-9bb5-4dc8-a60b-74e8bffc100a"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Bayesian%20Model-Agnostic%20Meta-Learning%2001eb7fb89bb54dc8a60b74e8bffc100a.html">Bayesian Model-Agnostic Meta-Learning</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Taesup Kim, Jaesik Yoon, Ousmane Dia, Sungwoong Kim, Yoshua Bengio, Sungjin Ahn</td><td class="cell-eW}0">NeurIPS Spotlight (2018)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/1806.03836" class="url-value">https://arxiv.org/abs/1806.03836</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-gray">Core ML/DL</span><span class="selected-value select-value-color-yellow">RL</span></td><td class="cell-:soD"><time>@Jun 11, 2018</time></td><td class="cell-hnn!"></td></tr><tr id="d39bb0eb-b8aa-4a6a-b9bf-08930f9b524c"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Task%20Agnostic%20Robust%20Learning%20on%20Corrupt%20Outputs%20b%20d39bb0ebb8aa4a6ab9bf08930f9b524c.html">Task Agnostic Robust Learning on Corrupt Outputs by Correlation-Guided Mixture Density Networks</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Sungjoon Choi (Disney Research) ∙ Sanghoon Hong (Kakao Brain) ∙ Kyungjae Lee (Seoul National University) ∙ Sungbin Lim (UNIST)</td><td class="cell-eW}0">CVPR Oral (2020)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://openaccess.thecvf.com/content_CVPR_2020/papers/Choi_Task_Agnostic_Robust_Learning_on_Corrupt_Outputs_by_Correlation-Guided_Mixture_CVPR_2020_paper.pdf" class="url-value">https://openaccess.thecvf.com/content_CVPR_2020/papers/Choi_Task_Agnostic_Robust_Learning_on_Corrupt_Outputs_by_Correlation-Guided_Mixture_CVPR_2020_paper.pdf</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-gray">Core ML/DL</span><span class="selected-value select-value-color-green">Meta-learning</span><span class="selected-value select-value-color-yellow">Noisy data</span><span class="selected-value select-value-color-pink">Vision</span><span class="selected-value select-value-color-orange">Weakly supervised learning</span></td><td class="cell-:soD"><time>@Jun 16, 2020</time></td><td class="cell-hnn!"></td></tr><tr id="f67546d5-3673-4020-ade5-14385ecc4322"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Fast%20AutoAugment%20f67546d536734020ade514385ecc4322.html">Fast AutoAugment</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Sungbin Lim, Ildoo Kim, Taesup Kim, Chiheon Kim, Sungwoong Kim</td><td class="cell-eW}0">NeurIPS (2019)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/1905.00397" class="url-value">https://arxiv.org/abs/1905.00397</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-green">AutoML</span><span class="selected-value select-value-color-green">Meta-learning</span></td><td class="cell-:soD"><time>@May 1, 2019</time></td><td class="cell-hnn!"><a href="https://github.com/kakaobrain/fast-autoaugment" class="url-value">https://github.com/kakaobrain/fast-autoaugment</a></td></tr><tr id="b71cfc90-8b64-41f8-b7be-18b2f8ae8d2a"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Scalable%20Neural%20Architecture%20Search%20for%203D%20Medical%20b71cfc908b6441f8b7be18b2f8ae8d2a.html">Scalable Neural Architecture Search for 3D Medical Image Segmentation</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Sungwoong Kim, Ildoo Kim, Sungbin Lim, Woonhyuk Baek, Chiheon Kim, Hyungjoo Cho, Boogeon Yoon, Taesup Kim</td><td class="cell-eW}0">MICCAI (2019)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/1906.05956" class="url-value">https://arxiv.org/abs/1906.05956</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-pink">Medical</span><span class="selected-value select-value-color-green">Meta-learning</span></td><td class="cell-:soD"><time>@Jun 13, 2019</time></td><td class="cell-hnn!"></td></tr><tr id="e7e40942-d38d-4a85-b2d4-3523f3f4ab21"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/KorNLI%20and%20KorSTS%20New%20Benchmark%20Datasets%20for%20Korea%20e7e40942d38d4a85b2d43523f3f4ab21.html">KorNLI and KorSTS: New Benchmark Datasets for Korean Natural Language Understanding</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Jiyeon Ham, Yo Joong Choe, Kyubyong Park, Ilji Choi, Hyungjoon Soh</td><td class="cell-eW}0">arXiv (2020)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/2004.03289" class="url-value">https://arxiv.org/abs/2004.03289</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-default">Korean</span><span class="selected-value select-value-color-red">NLP</span><span class="selected-value select-value-color-blue">NLU</span></td><td class="cell-:soD"><time>@Apr 7, 2020</time></td><td class="cell-hnn!"><a href="https://github.com/kakaobrain/KorNLUDatasets" class="url-value">https://github.com/kakaobrain/KorNLUDatasets</a></td></tr><tr id="df160c7d-d8ef-4718-b452-5a04f48ec0c7"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Binary%20Rating%20Estimation%20with%20Graph%20Side%20Informati%20df160c7dd8ef4718b4525a04f48ec0c7.html">Binary Rating Estimation with Graph Side Information</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Kwangjun Ahn, Kangwook Lee, Hyunseung Cha, Changho Suh</td><td class="cell-eW}0">NeurIPS (2018)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://papers.nips.cc/paper/7681-binary-rating-estimation-with-graph-side-information.pdf" class="url-value">https://papers.nips.cc/paper/7681-binary-rating-estimation-with-graph-side-information.pdf</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-brown">Information theory</span><span class="selected-value select-value-color-purple">Recommender systems</span></td><td class="cell-:soD"><time>@Dec 3, 2018</time></td><td class="cell-hnn!"></td></tr><tr id="d061b3cb-45b0-46b8-b689-76cf2bdf88a3"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/AutoCLINT%20The%20Winning%20Method%20in%20AutoCV%20Challenge%202%20d061b3cb45b046b8b68976cf2bdf88a3.html">AutoCLINT: The Winning Method in AutoCV Challenge 2019</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Woonhyuk Baek, Ildoo Kim, Sungwoong Kim, Sungbin Lim</td><td class="cell-eW}0">arXiv (2020)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/2005.04373" class="url-value">https://arxiv.org/abs/2005.04373</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-pink">Vision</span></td><td class="cell-:soD"><time>@May 9, 2020</time></td><td class="cell-hnn!"><a href="https://github.com/kakaobrain/autoclint" class="url-value">https://github.com/kakaobrain/autoclint</a></td></tr><tr id="b7c4e34a-e8f4-4a7e-bb06-77d2d81c34fd"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Jejueo%20Datasets%20for%20Machine%20Translation%20and%20Speech%20b7c4e34ae8f44a7ebb0677d2d81c34fd.html">Jejueo Datasets for Machine Translation and Speech Synthesis</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Kyubyong Park, Yo Joong Choe, Jiyeon Ham</td><td class="cell-eW}0">LREC (2020)</td><td class="cell-JI6="><a href="https://www.kaggle.com/bryanpark/jit-dataset">https://www.kaggle.com/bryanpark/jit-dataset</a></td><td class="cell-}ck*"><a href="https://www.kaggle.com/bryanpark/jejueo-single-speaker-speech-dataset">https://www.kaggle.com/bryanpark/jejueo-single-speaker-speech-dataset</a></td><td class="cell-AG[="><a href="https://arxiv.org/abs/1911.12071" class="url-value">https://arxiv.org/abs/1911.12071</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-red">NLP</span><span class="selected-value select-value-color-purple">Sound/Voice</span></td><td class="cell-:soD"><time>@Feb 12, 2020</time></td><td class="cell-hnn!"><a href="https://github.com/kakaobrain/jejueo" class="url-value">https://github.com/kakaobrain/jejueo</a></td></tr><tr id="b04a1a28-f2c3-4860-a112-658894bdc991"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/torchgpipe%20On-the-fly%20Pipeline%20Parallelism%20for%20Tra%20b04a1a28f2c34860a112658894bdc991.html">torchgpipe: On-the-fly Pipeline Parallelism for Training Giant Models</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Chiheon Kim, Heungsub Lee, Myungryong Jeong, Woonhyuk Baek, Boogeon Yoon, Ildoo Kim, Sungbin Lim, Sungwoong Kim</td><td class="cell-eW}0">arXiv (2020)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/2004.09910" class="url-value">https://arxiv.org/abs/2004.09910</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-gray">Core ML/DL</span><span class="selected-value select-value-color-pink">Vision</span></td><td class="cell-:soD"><time>@Apr 21, 2020</time></td><td class="cell-hnn!"><a href="https://github.com/kakaobrain/torchgpipe" class="url-value">https://github.com/kakaobrain/torchgpipe</a></td></tr><tr id="86887a10-a966-468f-a473-d89de482e299"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Convolutional%20Sequence%20to%20Sequence%20Model%20with%20Non-%2086887a10a966468fa473d89de482e299.html">Convolutional Sequence to Sequence Model with Non-sequential Greedy Decoding for Grapheme to Phoneme Conversion</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Moon-jung Chae, Kyubyong Park, Jinhyun Bang, Soobin Suh, Jonghyuk Park, Namju Kim,Jonghun Park</td><td class="cell-eW}0">ICASSP (2018)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://sigport.org/documents/convolutional-sequence-sequence-model-non-sequential-greedy-decoding-grapheme-phoneme" class="url-value">https://sigport.org/documents/convolutional-sequence-sequence-model-non-sequential-greedy-decoding-grapheme-phoneme</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-red">NLP</span><span class="selected-value select-value-color-green">Speech</span><span class="selected-value select-value-color-green">g2p</span></td><td class="cell-:soD"><time>@Apr 13, 2018</time></td><td class="cell-hnn!"></td></tr><tr id="5f2dd4e7-cc02-4bbc-8155-b97bf34a8f2d"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Tsallis%20Actor%20Critic%20A%20Unified%20Framework%20for%20Maxim%205f2dd4e7cc024bbc8155b97bf34a8f2d.html">Tsallis Actor Critic: A Unified Framework for Maximum Entropy Reinforcement Learning</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Kyungjae Lee, Sungyub Kim, Sungbin Lim, Sungjoon Choi, Songhwai Oh</td><td class="cell-eW}0">arXiv (2019)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/1902.00137" class="url-value">https://arxiv.org/abs/1902.00137</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-gray">Core ML/DL</span><span class="selected-value select-value-color-yellow">RL</span></td><td class="cell-:soD"><time>@Jan 31, 2019</time></td><td class="cell-hnn!"></td></tr><tr id="4dfc6116-569c-4dd8-8935-004c24c87aca"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Variational%20Temporal%20Abstraction%204dfc6116569c4dd88935004c24c87aca.html">Variational Temporal Abstraction</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Taesup Kim, Sungjin Ahn, Yoshua Bengio</td><td class="cell-eW}0">NeurIPS Poster (2019)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/1910.00775" class="url-value">https://arxiv.org/abs/1910.00775</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-purple">AGI</span><span class="selected-value select-value-color-gray">Generative model</span></td><td class="cell-:soD"><time>@Oct 2, 2019</time></td><td class="cell-hnn!"></td></tr><tr id="47303155-920f-4bf1-9df7-eb0ee0911715"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/HintPose%20(COCO%202019%20Keypoint%20Detection%20Task)%2047303155920f4bf19df7eb0ee0911715.html">HintPose (COCO 2019 Keypoint Detection Task)</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Sanghoon Hong, Hunchul Park, Jonghyuk Park, Sukhyun Cho, Heewoong Park</td><td class="cell-eW}0">ICCV 2019 Joint COCO and Mapillary Workshop (Most innovative award) (2019)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/2003.02170" class="url-value">https://arxiv.org/abs/2003.02170</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-pink">Vision</span></td><td class="cell-:soD"><time>@Oct 27, 2019</time></td><td class="cell-hnn!"></td></tr><tr id="3f5e1c53-49d5-48c8-9f71-034ec603625d"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Training%20Utterance-level%20Embedding%20Networks%20for%20Sp%203f5e1c5349d548c89f71034ec603625d.html">Training Utterance-level Embedding Networks for Speaker Identification and Verification</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Heewoong Park, Sukhyun Cho, Kyubyong Park, Namju Kim, Jonghun Park</td><td class="cell-eW}0">Interspeech (2018)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://www.isca-speech.org/archive/Interspeech_2018/pdfs/1044.pdf" class="url-value">https://www.isca-speech.org/archive/Interspeech_2018/pdfs/1044.pdf</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-red">NLP</span></td><td class="cell-:soD"><time>@Sep 6, 2018</time></td><td class="cell-hnn!"></td></tr><tr id="398832fb-6b27-4163-893f-2d7a85d231a1"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Temporal%20Attention%20Mechanism%20with%20Conditional%20Infe%20398832fb6b274163893f2d7a85d231a1.html">Temporal Attention Mechanism with Conditional Inference for Large-Scale Multi-Label Video Classification</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Eun-Sol Kim,Kyoung-Woon On, Jongseok Kim, Yu-Jung Heo, Seong-Ho Choi, Hyun-Dong Lee, Byoung-Tak Zhang</td><td class="cell-eW}0">ECCV Workshop on the YouTube-8M Large-Scale Video Understanding Challenge (2018)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://link.springer.com/chapter/10.1007%2F978-3-030-11018-5_28" class="url-value">https://link.springer.com/chapter/10.1007%2F978-3-030-11018-5_28</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-yellow">Attention</span><span class="selected-value select-value-color-brown">Multi-label classification</span><span class="selected-value select-value-color-purple">Multimodal sequential learning</span><span class="selected-value select-value-color-default">Video Understanding</span></td><td class="cell-:soD"><time>@Sep 9, 2018</time></td><td class="cell-hnn!"></td></tr><tr id="28bf4967-0d1a-40b7-91c6-d186baa33e51"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Demand%20Forecasting%20from%20Spatiotemporal%20Data%20withGr%2028bf49670d1a40b791c6d186baa33e51.html">Demand Forecasting from Spatiotemporal Data withGraph Networks and Temporal-Guided Embedding</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Doyup Lee, Suehun Jung, Yeongjae Cheon, Dongil Kim, Seungil You</td><td class="cell-eW}0">arXiv (2019)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/1905.10709" class="url-value">https://arxiv.org/abs/1905.10709</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-default">Spatiotemporal data analysis</span></td><td class="cell-:soD"><time>@May 26, 2019</time></td><td class="cell-hnn!"></td></tr><tr id="106a5f7c-5790-424c-ad72-ce57ea774b59"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Maximum%20Causal%20Tsallis%20Entropy%20Imitation%20Learning%20106a5f7c5790424cad72ce57ea774b59.html">Maximum Causal Tsallis Entropy Imitation Learning</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Kyungjae Lee, Sungjoon Choi, Songhwai Oh</td><td class="cell-eW}0">NeurIPS (2018)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/1805.08336" class="url-value">https://arxiv.org/abs/1805.08336</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-gray">Core ML/DL</span><span class="selected-value select-value-color-yellow">RL</span></td><td class="cell-:soD"><time>@May 22, 2018</time></td><td class="cell-hnn!"></td></tr><tr id="fcee5e21-37a5-4f3a-8ba1-b41f2cf74b29"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Edge-Labeling%20Graph%20Neural%20Network%20for%20Few-shot%20Le%20fcee5e2137a54f3a8ba1b41f2cf74b29.html">Edge-Labeling Graph Neural Network for Few-shot Learning</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Jongmin Kim, Taesup Kim, Sungwoong Kim, Chang D. Yoo</td><td class="cell-eW}0">CVPR (2019)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/1905.01436" class="url-value">https://arxiv.org/abs/1905.01436</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-green">Meta-learning</span><span class="selected-value select-value-color-pink">Vision</span></td><td class="cell-:soD"><time>@May 4, 2019</time></td><td class="cell-hnn!"></td></tr><tr id="d710b2e1-1ec8-459c-b00e-8791c3910b53"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Spatially%20Attentive%20Output%20Layer%20for%20Image%20Classif%20d710b2e11ec8459cb00e8791c3910b53.html">Spatially Attentive Output Layer for Image Classification</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Ildoo Kim, Woonhyuk Baek, Sungwoong Kim</td><td class="cell-eW}0">arXiv, CVPR (2020)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/2004.07570" class="url-value">https://arxiv.org/abs/2004.07570</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-gray">Core ML/DL</span><span class="selected-value select-value-color-pink">Vision</span></td><td class="cell-:soD"><time>@Feb 27, 2020</time></td><td class="cell-hnn!"></td></tr><tr id="ceacd7dc-ddb0-4f5d-bec1-0fcf208deb78"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/An%20Empirical%20Study%20of%20Invariant%20Risk%20Minimization%20ceacd7dcddb04f5dbec10fcf208deb78.html">An Empirical Study of Invariant Risk Minimization</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Yo Joong Choe, Jiyeon Ham, Kyubyong Park</td><td class="cell-eW}0">ICML Workshop on Uncertainty &amp; Robustness in Deep Learning (2020)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/2004.05007" class="url-value">https://arxiv.org/abs/2004.05007</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-gray">Core ML/DL</span><span class="selected-value select-value-color-brown">OOD Generation</span></td><td class="cell-:soD"><time>@Apr 10, 2020</time></td><td class="cell-hnn!"><a href="https://github.com/kakaobrain/irm-empirical-study" class="url-value">https://github.com/kakaobrain/irm-empirical-study</a></td></tr><tr id="8ebd75a6-326a-4a30-af46-60bcf914c38e"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/g2pM%20A%20Neural%20Grapheme-to-Phoneme%20Conversion%20Packa%208ebd75a6326a4a30af4660bcf914c38e.html">g2pM: A Neural Grapheme-to-Phoneme Conversion Package for Mandarin Chinese Based on a New Open Benchmark Dataset</a></td><td class="cell-Fbmw"><a href="https://pypi.org/project/g2pM/">https://pypi.org/project/g2pM/</a></td><td class="cell-Oc~K">Kyubyong Park, Seanie Lee</td><td class="cell-eW}0">arXiv (2020)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/2004.03136" class="url-value">https://arxiv.org/abs/2004.03136</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-purple">Sound/Voice</span><span class="selected-value select-value-color-green">Speech</span><span class="selected-value select-value-color-yellow">Speech-dataset</span><span class="selected-value select-value-color-gray">TTS</span><span class="selected-value select-value-color-green">g2p</span></td><td class="cell-:soD"><time>@Apr 7, 2020</time></td><td class="cell-hnn!"><a href="https://github.com/kakaobrain/g2pM" class="url-value">https://github.com/kakaobrain/g2pM</a></td></tr><tr id="4b967fa0-00da-480f-83b1-017fad2df92a"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Voice%20Conversion%20with%20Diverse%20Intonation%20using%20Con%204b967fa000da480f83b1017fad2df92a.html">Voice Conversion with Diverse Intonation using Conditional Variational Auto-Encoder</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Soobin Suh, Dabi Ahn, Heewoong Park, Jonghun Park</td><td class="cell-eW}0">ISCA Workshop on MLSLP (2018)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://drive.google.com/file/d/1vH5THqLsUPgmH5DyANtpQmIP5b2GdJTi/view" class="url-value">https://drive.google.com/file/d/1vH5THqLsUPgmH5DyANtpQmIP5b2GdJTi/view</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-purple">Sound/Voice</span></td><td class="cell-:soD"><time>@Sep 7, 2018</time></td><td class="cell-hnn!"></td></tr><tr id="4a4d4498-2e74-45cd-91bf-aba0d2c85adc"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/KoParadigm%20A%20Korean%20Conjugation%20Paradigm%20Generator%204a4d44982e7445cd91bfaba0d2c85adc.html">KoParadigm: A Korean Conjugation Paradigm Generator</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Kyubyong Park</td><td class="cell-eW}0">arXiv (2020)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/2004.13221" class="url-value">https://arxiv.org/abs/2004.13221</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-red">NLP</span></td><td class="cell-:soD"><time>@Apr 28, 2020</time></td><td class="cell-hnn!"><a href="https://github.com/Kyubyong/KoParadigm" class="url-value">https://github.com/Kyubyong/KoParadigm</a></td></tr><tr id="380be38b-7a83-4a44-a15b-1930f2e22f43"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Mining%20GOLD%20Samples%20for%20Conditional%20GANs%20380be38b7a834a44a15b1930f2e22f43.html">Mining GOLD Samples for Conditional GANs</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Sangwoo Mo, Chiheon Kim, Sungwoong Kim, Minsu Cho, Jinwoo Shin</td><td class="cell-eW}0">NeurIPS (2019)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/1910.09170" class="url-value">https://arxiv.org/abs/1910.09170</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-purple">Adversarial network</span><span class="selected-value select-value-color-gray">Generative model</span></td><td class="cell-:soD"><time>@Oct 21, 2019</time></td><td class="cell-hnn!"></td></tr><tr id="19892bb7-36a6-470e-8b6d-05e34adae92e"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/CSS10%20A%20Collection%20of%20Single%20Speaker%20Speech%20Datase%2019892bb736a6470e8b6d05e34adae92e.html">CSS10: A Collection of Single Speaker Speech Datasets for 10 Languages</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K">Kyubyong Park, Thomas Mulc</td><td class="cell-eW}0">Interspeech (2019)</td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="><a href="https://arxiv.org/abs/1903.11269" class="url-value">https://arxiv.org/abs/1903.11269</a></td><td class="cell-Y24C"><span class="selected-value select-value-color-green">Speech</span><span class="selected-value select-value-color-gray">TTS</span></td><td class="cell-:soD"><time>@May 27, 2019</time></td><td class="cell-hnn!"><a href="https://github.com/Kyubyong/css10" class="url-value">https://github.com/Kyubyong/css10</a></td></tr><tr id="e365635b-ca9c-4a7d-b18e-3a4b69e99bf6"><td class="cell-title"><a href="../Our%20Research%20a125fc6940ff4596b7ff5d1cf285b5ea/Untitled%20e365635bca9c4a7db18e3a4b69e99bf6.html">Untitled</a></td><td class="cell-Fbmw"></td><td class="cell-Oc~K"></td><td class="cell-eW}0"></td><td class="cell-JI6="></td><td class="cell-}ck*"></td><td class="cell-AG[="></td><td class="cell-Y24C"></td><td class="cell-:soD"></td><td class="cell-hnn!"></td></tr></tbody></table></div></article></body></html>
